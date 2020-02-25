@@ -15,7 +15,7 @@ class Connection
         $this->db = "becode";
 
         try {
-            $dataElements = 'mysql:host='.$this->dbhost. ';db='. $this->db;
+            $dataElements = 'mysql:host='.$this->dbhost. ';dbname='. $this->db;
             $pdo = new PDO($dataElements, $this->dbuser , $this->dbpass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Connected successfully";
@@ -24,21 +24,11 @@ class Connection
             echo "Connection failed: " . $e->getMessage();
         }
 
+
+    }
+
+    public function insertData () : string {
+       return 'INSERT INTO student(first_name, last_name, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) 
+                VALUES(:firstName, :lastName, :username, :linkedin, :github, :email, :language, :avatar, :video, :quote, :quoteAuthor)';
     }
 }
-
-/*
-function openConnection() {
-    // Try to figure out what these should be for you
-    $dbhost    = "localhost";
-    $dbuser    = "erick";
-    $dbpass    = "kcirE";
-    $db        = "becode";
-   //phpinfo(); exit();
-    // Try to understand what happens here
-    $pdo = new PDO('mysql:host='. $dbhost . ';dbname='. $db, $dbuser, $dbpass);
-
- // Why we do this here
- return $pdo;
-}
-*/

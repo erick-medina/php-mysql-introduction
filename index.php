@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 // model files
 require 'Model/connection.php';
+require 'Model/User.php';
 
 // controller files
 require 'Controller/HomePageController.php';
