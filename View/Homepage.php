@@ -35,13 +35,14 @@ require 'insert.php';
     $pdo = $callConnection->openConnection();
     // fetching database into the table
     $stm = $pdo->query('SELECT id, first_name, last_name, email, preferred_language FROM student')->fetchAll();
-    forEach ($stm as $row) {
+    // foreach in order to display in rows info from database
+    forEach ($stm as $rows) {
         echo '<tr>';
-        echo '<td>' . $row['id'] . '</td>';
-        echo '<td>' . $row['first_name'] . '</td>';
-        echo '<td>' . $row['last_name'] . '</td>';
-        echo '<td>' . $row['email'] . '</td>';
-        echo '<td>' . $row['preferred_language'] . '</td>';
+        echo '<td>' . $rows['id'] . '</td>';
+        echo '<td>' . $rows['first_name'] . '</td>';
+        echo '<td>' . $rows['last_name'] . '</td>';
+        echo '<td>' . $rows['email'] . '</td>';
+        echo '<td><img src="Images/' . $rows['preferred_language'] . '.jpg"></td>';
         echo '</tr>';
     }
     ?>
