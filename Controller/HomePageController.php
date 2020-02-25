@@ -17,11 +17,12 @@ class HomePageController
                     $_POST['avatar'], $_POST['video'], $_POST['quote'], $_POST['quoteAuthor']);
                 var_dump($users);
 
-                // calling connection object
+                // calling objects
                 $callConnection = new Connection;
                 $pdo = $callConnection->openConnection();
                 $stmt = $callConnection->insertData();
 
+                // prepared statement to sanitize input
                 $pdo->prepare($stmt)->execute([
                     'firstName' =>  $users->getFirstName(),
                     'lastName' =>   $users->getLastName(),

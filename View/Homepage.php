@@ -18,6 +18,34 @@
 <?php
 require 'insert.php';
 ?>
+<table style="width:100%" border="1px">
+    <tr>
+        <h2>Student record</h2>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Preferred language</th>
+        <th>Personal page</th>
+    </tr>
+    <?php
+    $callConnection = new Connection;
+    $pdo = $callConnection->openConnection();
+    // fetching database into the table
+    $stm = $pdo->query('SELECT id, first_name, last_name, email, preferred_language FROM student')->fetchAll();
+    forEach ($stm as $row) {
+        echo '<tr>';
+        echo '<td>' . $row['id'] . '</td>';
+        echo '<td>' . $row['first_name'] . '</td>';
+        echo '<td>' . $row['last_name'] . '</td>';
+        echo '<td>' . $row['email'] . '</td>';
+        echo '<td>' . $row['preferred_language'] . '</td>';
+        echo '</tr>';
+    }
+    ?>
+</table>
 <style>
     body {
         text-align: center;

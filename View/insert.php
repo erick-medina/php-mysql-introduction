@@ -26,8 +26,14 @@
                 <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email address" required>
             </div>
             <div class="form-group">
-                <label for="language">Preferred language</label>
-                <input type="text" class="form-control" name="language" id="language" placeholder="Choose your preferred language" required>
+            <label for="language">Preferred language</label>
+            <select class="form-control" name="language" id="language" required>
+                <option value="en">EN</option>
+                <option value="nl">NL</option>
+                <option value="de">DE</option>
+                <option value="fr">FR</option>
+                <option value="es">ES</option>
+            </select>
             </div>
             <div class="form-group">
                 <label for="avatar">Avatar</label>
