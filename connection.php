@@ -6,7 +6,7 @@ function openConnection() {
     $dbuser    = "erick";
     $dbpass    = "kcirE";
     $db        = "becode";
-
+   //phpinfo(); exit();
     // Try to understand what happens here
     $pdo = new PDO('mysql:host='. $dbhost . ';dbname='. $db, $dbuser, $dbpass);
 
