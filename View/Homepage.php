@@ -43,6 +43,7 @@ require 'insert.php';
         echo '<td>' . $rows['last_name'] . '</td>';
         echo '<td>' . $rows['email'] . '</td>';
         echo '<td><img src="Images/' . $rows['preferred_language'] . '.jpg"></td>';
+        echo '<td><a href="http://php-mysql-introduction.local/profile.php/?user=' . $rows['id'] . '">Personal profile</a></td>';
         echo '</tr>';
     }
     ?>
