@@ -29,16 +29,19 @@ $fetch = $stmt->fetch();
 </head>
 
 <body>
+<section>
 <h1><?php echo $fetch['first_name'] . ' ' . $fetch['last_name'] ?></h1>
 <p>Username: <?php echo $fetch['username'] ?></p>
 <p>LinkedIn: <?php echo $fetch['linkedin'] ?></p>
 <p>Github: <?php echo $fetch['github'] ?></p>
 <p>Email: <?php echo $fetch['email'] ?></p>
 <p>Preferred language: <?php echo $fetch['preferred_language'] ?></p>
-<p>Avatar: <?php echo $fetch['avatar'] ?></p>
-<p>Video: <?php echo $fetch['video'] ?></p>
+<img src="<?php echo $fetch['avatar']; ?>" />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $fetch['video']; ?>?autoplay=1&autohide=1&controls=1&showinfo=0&modestbranding=1&rel=0"></iframe>
 <p>Quote: <?php echo $fetch['quote'] ?></p>
 <p>Quote author: <?php echo $fetch['quote_author'] ?></p>
+<p>Created at: <?php echo $fetch['created_at'] ?></p>
+</section>
 
 <style>
 

@@ -14,7 +14,7 @@ class User extends Connection // to connect with the database via class Connecti
     private $video;
     private $quote;
     private $quoteAuthor;
-    private $createdAt;
+
     /**
      * User constructor.
      * @param $firstName
@@ -29,7 +29,7 @@ class User extends Connection // to connect with the database via class Connecti
      * @param $quote
      * @param $quoteAuthor
      */
-    public function __construct($firstName, $lastName, $username, $linkedin, $github, $email, $language, $avatar, $video, $quote, $quoteAuthor, $createdAt)
+    public function __construct($firstName, $lastName, $username, $linkedin, $github, $email, $language, $avatar, $video, $quote, $quoteAuthor)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -42,13 +42,12 @@ class User extends Connection // to connect with the database via class Connecti
         $this->video = $video;
         $this->quote = $quote;
         $this->quoteAuthor = $quoteAuthor;
-        $this->createdAt = $createdAt;
     }
 
     /**
      * @return mixed
      */
-    public function getFirstName()
+    public function getFirstName() : string
     {
         return $this->firstName;
     }
@@ -56,7 +55,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getLastName()
+    public function getLastName() : string
     {
         return $this->lastName;
     }
@@ -64,7 +63,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getUsername()
+    public function getUsername() : string
     {
         return $this->username;
     }
@@ -72,7 +71,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getLinkedin()
+    public function getLinkedin() : string
     {
         return $this->linkedin;
     }
@@ -80,7 +79,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getGithub()
+    public function getGithub() : string
     {
         return $this->github;
     }
@@ -88,7 +87,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmail() : string
     {
         return $this->email;
     }
@@ -96,7 +95,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getLanguage()
+    public function getLanguage() : string
     {
         return $this->language;
     }
@@ -104,7 +103,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getAvatar()
+    public function getAvatar() : string
     {
         return $this->avatar;
     }
@@ -112,7 +111,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getVideo()
+    public function getVideo() : string
     {
         return $this->video;
     }
@@ -120,7 +119,7 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getQuote()
+    public function getQuote() : string
     {
         return $this->quote;
     }
@@ -128,18 +127,9 @@ class User extends Connection // to connect with the database via class Connecti
     /**
      * @return mixed
      */
-    public function getQuoteAuthor()
+    public function getQuoteAuthor() : string
     {
         return $this->quoteAuthor;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
 
 }
