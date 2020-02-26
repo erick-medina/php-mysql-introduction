@@ -12,7 +12,11 @@ require 'Model/User.php';
 // controller files
 require 'Controller/HomePageController.php';
 
-$controller = new HomePageController();
-$controller->render();
+$homePageController = new HomePageController();
+$homePageController->render();
+
+
+
+
 
 
