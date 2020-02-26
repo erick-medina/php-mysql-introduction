@@ -14,7 +14,7 @@ class User extends Connection // to connect with the database via class Connecti
     private $video;
     private $quote;
     private $quoteAuthor;
-
+    private $createdAt;
     /**
      * User constructor.
      * @param $firstName
@@ -29,7 +29,7 @@ class User extends Connection // to connect with the database via class Connecti
      * @param $quote
      * @param $quoteAuthor
      */
-    public function __construct($firstName, $lastName, $username, $linkedin, $github, $email, $language, $avatar, $video, $quote, $quoteAuthor)
+    public function __construct($firstName, $lastName, $username, $linkedin, $github, $email, $language, $avatar, $video, $quote, $quoteAuthor, $createdAt)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -42,6 +42,7 @@ class User extends Connection // to connect with the database via class Connecti
         $this->video = $video;
         $this->quote = $quote;
         $this->quoteAuthor = $quoteAuthor;
+        $this->createdAt = $createdAt;
     }
 
     /**
@@ -132,6 +133,13 @@ class User extends Connection // to connect with the database via class Connecti
         return $this->quoteAuthor;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
 
 
 }
