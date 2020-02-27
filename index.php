@@ -11,11 +11,25 @@ require 'Model/User.php';
 
 // controller files
 require 'Controller/HomePageController.php';
-
-$homePageController = new HomePageController();
-$homePageController->render();
+require 'Controller/ProfileController.php';
 
 
+if (isset($_GET['page']) && $_GET['page'] === 'homepage') {
+    $homePageController = new HomePageController();
+    $homePageController->render();
+} elseif (isset($_GET) || $_GET['page'] === 'login') {
+    $profileController = new ProfileController();
+    $profileController->render();
+}
+/*
+if (!isset($_GET['page'])) {
+        $homePageController = new HomePageController();
+        $homePageController->render();
+    } else {
+    $profileController = new ProfileController();
+    $profileController->render();
+}
+*/
 
 
 

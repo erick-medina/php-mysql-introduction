@@ -17,6 +17,14 @@
                        required>
             </div>
             <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Confirm password</label>
+                <input type="confirm-password" name="confirm-password" placeholder="Confirm password" id="confirm-password" required>
+            </div>
+            <div class="form-group">
                 <label for="linkedin">LinkedIn</label>
                 <input type="text" class="form-control" name="linkedin" id="linkedin"
                        placeholder="Enter your LinkedIn account" required>

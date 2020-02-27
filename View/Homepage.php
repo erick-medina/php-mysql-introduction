@@ -13,10 +13,10 @@
 
 <body>
 <section>
-    <h1>MySql</h1>
+    <h1>Sign up</h1>
 </section>
 <?php
-require 'insert.php';
+require 'register.php';
 ?>
 <table style="width:100%" border="1px">
     <tr>
