@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="password">Confirm password</label>
-                <input type="confirm-password" name="confirm-password" placeholder="Confirm password" id="confirm-password" required>
+                <input type="confirm-password" name="confirmPassword" placeholder="Confirm password" id="confirm-password" required>
             </div>
             <div class="form-group">
                 <label for="linkedin">LinkedIn</label>

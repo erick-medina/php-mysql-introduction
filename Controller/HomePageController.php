@@ -11,9 +11,22 @@ class HomePageController
     public function render()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST['submit'])) {
-                $users = new User($_POST['firstName'], $_POST['lastName'], $_POST['username'],
-                    $_POST['linkedin'], $_POST['github'], $_POST['email'], $_POST['language'],
+            $validateEmail= true;
+            $email = $_POST['email'];
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // check if email is correct
+                echo 'Invalid email format';
+                $validateEmail = false;
+            }
+            $validatePassword = true;
+            $password = $_POST['password'];
+            $confirmPassword = $_POST['confirmPassword'];
+            if ($password = $confirmPassword) {
+                echo 'Passwords are equal';
+            }
+            if (isset($_POST['submit']) && $validateEmail) {
+                $users = new User($_POST['firstName'], $_POST['lastName'], $_POST['username'], $_POST['password'],
+                    $_POST['confirmPassword'], $_POST['linkedin'], $_POST['github'], $email, $_POST['language'],
                     $_POST['avatar'], $_POST['video'], $_POST['quote'], $_POST['quoteAuthor']);
                 var_dump($users);
 
@@ -27,6 +40,8 @@ class HomePageController
                     'firstName' =>  $users->getFirstName(),
                     'lastName' =>   $users->getLastName(),
                     'username' =>   $users->getUsername(),
+                    'password' =>   $users->getConfirmPassword(),
+                    'passwordConfirm' => $users->getConfirmPassword(),
                     'linkedin' =>   $users->getLinkedin(),
                     'github' =>     $users->getGithub(),
                     'email' =>      $users->getEmail(),

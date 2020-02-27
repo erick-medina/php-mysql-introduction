@@ -6,6 +6,8 @@ class User extends Connection // to connect with the database via class Connecti
     private $firstName;
     private $lastName;
     private $username;
+    private $password;
+    private $confirmPassword;
     private $linkedin;
     private $github;
     private $email;
@@ -29,11 +31,13 @@ class User extends Connection // to connect with the database via class Connecti
      * @param $quote
      * @param $quoteAuthor
      */
-    public function __construct($firstName, $lastName, $username, $linkedin, $github, $email, $language, $avatar, $video, $quote, $quoteAuthor)
+    public function __construct($firstName, $lastName, $username, $password, $confirmPassword, $linkedin, $github, $email, $language, $avatar, $video, $quote, $quoteAuthor)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->username = $username;
+        $this->password = $password;
+        $this->confirmPassword = $confirmPassword;
         $this->linkedin = $linkedin;
         $this->github = $github;
         $this->email = $email;
@@ -66,6 +70,22 @@ class User extends Connection // to connect with the database via class Connecti
     public function getUsername() : string
     {
         return $this->username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConfirmPassword()
+    {
+        return $this->confirmPassword;
     }
 
     /**
